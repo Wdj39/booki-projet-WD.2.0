@@ -32,7 +32,7 @@ li{
 header{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; 
+    margin-bottom: 40px; 
     margin-top: 10px;
 }
 
@@ -46,31 +46,44 @@ img#logo{
 }
 
 /* menu */
- ul.menu{
+ul.menu {
     display: flex;
     font-weight: 500;
     gap: 50px;
-}
-ul.menu:hover{
-    font-weight: 500;  
-}
-li.nav_hebergements {
-    width: 100px;
-    text-align: center;
-    padding-top: 20px;
-}
-li.nav_activités {
-    width: 100px;
-    text-align: center;
-    padding-top: 20px;
-}
-.nav_hebergements:hover{
-    border-top: 2px solid #0065FC;;
+    padding: 0;
+    list-style-type: none;
 }
 
-.nav_activités:hover{
-    border-top: 2px solid #0065FC;;
+li.nav_hebergements, li.nav_activités {
+    text-align: center;
+    padding-top: 20px;
 }
+
+li.nav_hebergements a, li.nav_activités a {
+    color: #000000; /* Couleur du texte par défaut */
+    text-decoration: none;
+    position: relative;
+}
+
+li.nav_hebergements a::before, li.nav_activités a::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0065FC; /* Couleur de la ligne au survol */
+    position: absolute;
+    top: -28px; /* Ajustez cette valeur pour positionner la ligne plus haut */
+    left: 0;
+}
+
+li.nav_hebergements a:hover::before, li.nav_activités a:hover::before {
+    width: 100%;
+}
+
+li.nav_hebergements a:hover, li.nav_activités a:hover {
+    color: #0065FC; /* Changement de couleur du texte au survol */
+}
+
 
 /*fin header*/
 
@@ -208,6 +221,7 @@ li.nav_activités {
     .custom-size_info{
         color: #0065FC;
         border: 2px solid #F2F2F2;
+        font-size: small;
         border-radius: 40px;
         padding: 6px;
         padding-top: 2px;
@@ -259,6 +273,13 @@ a {
 .card-title {
     font-size: 15px;
     font-weight: bold;
+    margin-bottom: 6px;
+}
+.card-title_2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .euro {
@@ -283,6 +304,14 @@ a {
     padding: 5px;
     height: 100%;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+.card-heb:hover{
+    transform: scale(1.1); /* Ajustez la valeur selon vos besoins */
+    transition: transform 0.3s ease; /* Ajoute une transition pour rendre l'agrandissement plus fluide */
+}
+.card-content_1{
+    padding-left: 10px;
+    padding-bottom: 3px;
 }
 
 .hebergements {
@@ -357,7 +386,7 @@ a {
 }
 
 .card-rating .neutral-star {
-    color: rgb(187, 187, 187); /* Couleur des étoiles neutres */
+    color: rgb(226, 226, 226); /* Couleur des étoiles neutres */
 }
 
 .populaires-cards .card {
@@ -424,6 +453,7 @@ a {
     justify-content: space-between;
     margin-top: 20px;
     height: 460px;
+    gap: 50px;
 }
 
 .activite_image{
