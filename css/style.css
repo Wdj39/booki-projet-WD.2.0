@@ -316,8 +316,11 @@ a {
     border-radius: 20px;
 }
 
+/* CORRECTION : font-weight 750 → 700 (valeur standard) */
+/* Le h1 "Hébergements à Marseille" ayant été remplacé par h2 dans le HTML,
+   le style reste identique car il cible le conteneur #accommodation_title */
 #accommodation_title {
-    font-weight: 750;
+    font-weight: 700;
     font-size: large;
 }
 
@@ -955,9 +958,11 @@ li.footer_links:hover a, li.footer_links:focus a, li.footer_links:active a {
         color: black;
     }
 
+    /* CORRECTION : suppression du margin-left: -20px instable
+       et du white-space: nowrap qui coupait le texte sur mobile */
     h2 {
-        white-space: nowrap;
-        margin-left: -20px;
+        white-space: normal;
+        margin-left: 0;
     }
 
     .title_city_activities {
