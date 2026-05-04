@@ -91,6 +91,7 @@ li.nav_accommodations a:hover, li.nav_activities a:hover {
 /* search section */
 section {
     margin-bottom: 40px;
+    margin-left: 15px;
 }
 
 .custom-size {
